@@ -24,7 +24,7 @@ namespace AddressBookLinq
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter the Program number to get executed \n1.Edit Existing data \n2.Exit");
+                Console.WriteLine("Enter the Program number to get executed \n1.Edit Existing data \n2.Delete Existing data \n3.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -32,6 +32,9 @@ namespace AddressBookLinq
                         address.EditExistingContact(contactlist);
                         break;
                     case 2:
+                        address.DeleteContact("Ashu");
+                        break;
+                    case 3:
                         flag = false;
                         break;
                 }

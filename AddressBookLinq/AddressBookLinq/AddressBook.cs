@@ -59,5 +59,26 @@ namespace AddressBookLinq
                 }
             }
         }
+        public void DeleteContact(string Name)
+        {
+            try
+            {
+                var rowdelete = datatable.AsEnumerable().Where(a => a.Field<string>("firstname").Equals(Name)).FirstOrDefault();
+                if (rowdelete != null)
+                {
+                    rowdelete.Delete();
+                    Console.WriteLine("\nContact with name '{0}' deleted ", Name);
+                    Display();
+                }
+                else
+                {
+                    Console.WriteLine("Data Not found");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 }
