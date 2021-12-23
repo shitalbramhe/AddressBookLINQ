@@ -21,6 +21,21 @@ namespace AddressBookLinq
                 new Contact{ firstname = "Ashu", lastname = "Thakre", address = "New Nandavan", city = "Nagpur", state = "Maharashtra", zip = 440032 ,phonenumber = 8234567890,email = "Ashu@gmail.com" }
             };
             address.AddDataTable(contactlist);
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("Enter the Program number to get executed \n1.Edit Existing data \n2.Exit");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        address.EditExistingContact(contactlist);
+                        break;
+                    case 2:
+                        flag = false;
+                        break;
+                }
+            }
         }
     }
 }
