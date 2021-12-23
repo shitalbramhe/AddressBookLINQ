@@ -80,5 +80,15 @@ namespace AddressBookLinq
                 Console.WriteLine(e.Message);
             }
         }
+        public void RetrievePersonUsingCity(Contact contactlist)
+        {
+            var selectdata = datatable.AsEnumerable().Where(a => a.Field<string>("city").Equals(contactlist.city));
+            foreach (var item in datatable.AsEnumerable())
+            {
+                Console.WriteLine("\tfirstname:" + item.Field<string>("firstname") + "\tlastname:" + item.Field<string>("lastname")+ "\taddress:" + item.Field<string>("address")+ "\tcity:" + item.Field<string>("City")+ "\tstate:" + item.Field<string>("State")+ "\tzip:" + item.Field<int>("zip")+ "\tphonenumber:" + item.Field<long>("phonenumber")+ "\temail:" + item.Field<string>("email"));
+            }
+
+        }
     }
 }
+        

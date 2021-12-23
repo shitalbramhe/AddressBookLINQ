@@ -24,7 +24,7 @@ namespace AddressBookLinq
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter the Program number to get executed \n1.Edit Existing data \n2.Delete Existing data \n3.Exit");
+                Console.WriteLine("Enter the Program number to get executed \n1.Edit Existing data \n2.Delete Existing data \n3.Retrieve Person belong to city \n4.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -35,6 +35,12 @@ namespace AddressBookLinq
                         address.DeleteContact("Ashu");
                         break;
                     case 3:
+                        Console.WriteLine("Enter name of city");
+                        Contact data = new Contact();
+                        data.city = Console.ReadLine();
+                        address.RetrievePersonUsingCity(data);
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
