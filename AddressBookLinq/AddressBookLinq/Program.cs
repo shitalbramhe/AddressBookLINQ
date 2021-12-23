@@ -24,7 +24,7 @@ namespace AddressBookLinq
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter the Program number to get executed \n1.Edit Existing data \n2.Delete Existing data \n3.Retrieve Person belong to city \n4.Exit");
+                Console.WriteLine("Enter the Program number to get executed \n1.Edit Existing data \n2.Delete Existing data \n3.Retrieve Person belong to city \n4.Retrieve Person belong to state \n5.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -41,6 +41,12 @@ namespace AddressBookLinq
                         address.RetrievePersonUsingCity(data);
                         break;
                     case 4:
+                        Console.WriteLine("Enter name of state");
+                        Contact sdata = new Contact();
+                        sdata.state = Console.ReadLine();
+                        address.RetrievePersonUsingCity(sdata);
+                        break;
+                    case 5:
                         flag = false;
                         break;
                 }
